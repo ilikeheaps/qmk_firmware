@@ -405,6 +405,7 @@ bool process_tapping(keyrecord_t *keyp) {
                     // Sequential tap can be interfered with other tap key.
                     ac_dprintf("Tapping: Start with interfering other tap.\n");
                     tapping_key = *keyp;
+                    process_record_tap_hint(&tapping_key);
                     waiting_buffer_scan_tap();
                     debug_tapping_key();
                     return true;
